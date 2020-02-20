@@ -27,7 +27,29 @@
         <link rel="stylesheet" href="https://geowidget.easypack24.net/css/easypack.css"/>
     </head>
 
+
     <body>        
-        <div id="easypack-map"></div>   
+        <div id="easypack-map"></div> 
+
+        <script type="text/javascript">
+            //always subscribe to ready event and implement widget related code
+            //inside callback function , it is the best practice while developing widgets
+            JFCustomWidget.subscribe("ready", function(){
+                var label = JFCustomWidget.getWidgetSetting('QuestionLabel');
+                document.getElementById('labelText').innerHTML = label;
+                //subscribe to form submit event
+                JFCustomWidget.subscribe("submit", function(){
+                    var msg = {
+                        //you should valid attribute to data for JotForm
+                        //to be able to use youw widget as required
+                        valid: true,
+                        value: document.getElementById('userInput').value
+                    }
+                    // send value to JotForm
+                    JFCustomWidget.sendSubmit(map);
+                });
+            });
+        </script>
+
     </body>
 </html>
