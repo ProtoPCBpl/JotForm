@@ -63,8 +63,16 @@
                         value: document.getElementById('pName').value
                     }
 
+                    var msg2 = {
+                        //you should valid attribute to data for JotForm
+                        //to be able to use youw widget as required
+                        valid: true,
+                        value: document.getElementById('pAddress1').value
+                    }
+
                     // send value to JotForm
                     JFCustomWidget.sendSubmit(msg);
+                    JFCustomWidget.sendSubmit(msg2);
                 });
             });
         </script>
