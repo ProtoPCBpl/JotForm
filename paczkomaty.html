@@ -12,7 +12,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
         <meta http-equiv="x-ua-compatible" content="IE=11"/>
-        <title>432Paczkomaty 24/7</title>
+        <title>1Paczkomaty 24/7</title>
         <script src="https://geowidget.easypack24.net/js/sdk-for-javascript.js"></script>
         <script src="//js.jotform.com/JotFormCustomWidget.min.js"></script>
 
@@ -51,11 +51,11 @@
             //inside callback function , it is the best practice while developing widgets
             JFCustomWidget.subscribe("ready", function(){
 
-                var label = JFCustomWidget.getWidgetSetting('QuestionLabel');
-                document.getElementById('Name').innerHTML = label;
+                var label1 = JFCustomWidget.getWidgetSetting('QuestionLabel');
+                document.getElementById('Name').innerHTML = label1;
 
-                var label = JFCustomWidget.getWidgetSetting('QuestionLabe2');
-                document.getElementById('Address1').innerHTML = label;
+                var label2 = JFCustomWidget.getWidgetSetting('QuestionLabe2');
+                document.getElementById('Address1').innerHTML = label2;
 
                 //subscribe to form submit event
                 JFCustomWidget.subscribe("submit", function(){
