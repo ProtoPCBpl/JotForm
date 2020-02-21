@@ -11,7 +11,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
         <meta http-equiv="x-ua-compatible" content="IE=11"/>
-        <title>Paczkiiiiiiiiiiiiiiomaty 24/7</title>
+        <title>Paczkomaty 24/7</title>
         <script src="https://geowidget.easypack24.net/js/sdk-for-javascript.js"></script>
         <script src="//js.jotform.com/JotFormCustomWidget.min.js"></script>
 
@@ -54,22 +54,18 @@
                 document.getElementById('labelText').innerHTML = label;
 
                 //subscribe to form submit event
-                JFCustomWidget.subscribe("submit", function() {
-                    var result = {}
-                    //this part will be used if your field is required. If your widget is required valid
-                    //property will be expected before form can be submitted
-                    result.valid = true;
-                    //this is your field result. You are expected to send value property as string
-                    result.value = "my precious data"
-                    //most probably you will call sendSubmit method
-                    var res = {}
-                    //this part will be used if your field is required. If your widget is required valid
-                    //property will be expected before form can be submitted
-                    res.valid = true;
-                    //this is your field result. You are expected to send value property as string
-                    res.value = "my precious data"
-                    //most probably you will call sendSubmit method
-                    JFCustomWidget.sendSubmit(result, res)
+                JFCustomWidget.subscribe("submit", function(){
+
+                    var msg = {
+                        //you should valid attribute to data for JotForm
+                        //to be able to use youw widget as required
+                        valid: true,
+                        value: document.getElementById(point).value
+                    }
+
+                    // send value to JotForm
+                    JFCustomWidget.sendSubmit(msg);
+
                 });
             });
         </script>
