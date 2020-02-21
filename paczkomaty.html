@@ -4,52 +4,59 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
         <meta http-equiv="x-ua-compatible" content="IE=11"/>
-        <title>Geowidget v4 - Example - Basic Params</title>
+        <title>Geowidget v4 - Example - Basic</title>
         <script src="https://geowidget.easypack24.net/js/sdk-for-javascript.js"></script>
         <script type="text/javascript">
+
           window.easyPackAsyncInit = function () {
             easyPack.init({
-                defaultLocale: 'pl',
-                mapType: 'osm',
-                searchType: 'osm',
-                points: {
-                    types: ['parcel_locker']
-                },
-                map: {
-                    initialTypes: ['parcel_locker']
-                }
+              mapType: 'osm',
+              searchType: 'osm',
             });
+
             var map = easyPack.mapWidget('easypack-map', function(point) {
-              //alert(point.name);
+              console.log(point.name);
+              // var p1 = "point.name"; var p2 = 'point.name'; var p3 = point.name;
+              //   console.log("Sample log message with parameters: %s, %s, %s", p1, p2, p3);
+                document.getElementById('userInput').value = point.name;
+
             });
           };
-        </script>
-        <link rel="stylesheet" href="https://geowidget.easypack24.net/css/easypack.css"/>
-    </head>
-
-
-    <body>        
-        <div id="easypack-map"></div> 
-
-        <script type="text/javascript">
+      
             //always subscribe to ready event and implement widget related code
             //inside callback function , it is the best practice while developing widgets
             JFCustomWidget.subscribe("ready", function(){
+
                 var label = JFCustomWidget.getWidgetSetting('QuestionLabel');
                 document.getElementById('labelText').innerHTML = label;
+
                 //subscribe to form submit event
                 JFCustomWidget.subscribe("submit", function(){
+
                     var msg = {
                         //you should valid attribute to data for JotForm
                         //to be able to use youw widget as required
                         valid: true,
                         value: document.getElementById('userInput').value
                     }
+
                     // send value to JotForm
-                    JFCustomWidget.sendSubmit(map);
+                    JFCustomWidget.sendSubmit(msg);
                 });
             });
         </script>
 
+        <link rel="stylesheet" href="https://geowidget.easypack24.net/css/easypack.css"/>
+    </head>
+
+    <body>
+        <div id="easypack-map"></div>
+        <div id="main">
+            <h3>This is my first widget.</h3>
+            <span id="labelText"></span>
+
+            <input type="text" id="userInput" readonly>
+
+        </div>
     </body>
 </html>
