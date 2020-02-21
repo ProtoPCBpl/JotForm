@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="pl" style="height: 100%;">
     <head>
-        <style>.center {
+        <style>
+        .center {
         text-align: center;
         border-style: none;
         background-color: #f7f6f1;
         font-family: Open Sans, sans-serif;
         }
+        .hiden {
+            display: none;
+        }
         </style>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
         <meta http-equiv="x-ua-compatible" content="IE=11"/>
-        <title>Paczkomaty 24/7</title>
+        <title>       Paczkomaty 24/7</title>
         <script src="https://geowidget.easypack24.net/js/sdk-for-javascript.js"></script>
         <script src="//js.jotform.com/JotFormCustomWidget.min.js"></script>
 
@@ -78,7 +82,7 @@
         <div id="main" class="center">
             <h3>Wybrany paczkomat:</h3>
             <div>
-                <span id="Name"></span>
+                <span class="hidden" id="Name"></span>
                 <input class="center type="text" id="pName" readonly>
             </div><br>
             <div>
