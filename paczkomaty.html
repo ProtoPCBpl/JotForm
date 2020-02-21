@@ -11,7 +11,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
         <meta http-equiv="x-ua-compatible" content="IE=11"/>
-        <title>Pmaty 24/7</title>
+        <title>Paczkomaty 24/7</title>
         <script src="https://geowidget.easypack24.net/js/sdk-for-javascript.js"></script>
         <script src="//js.jotform.com/JotFormCustomWidget.min.js"></script>
 
@@ -39,9 +39,8 @@
               console.log(point.address_details.city);
               // var p1 = "point.name"; var p2 = 'point.name'; var p3 = point.name;
               // console.log("Sample log message with parameters: %s, %s, %s", p1, p2, p3);
-                document.getElementById('pName').value = point.name+"\n"+point.address.line1+"\n"+point.address.line2;
-                document.getElementById('pAddress1').value = point.address.line1;
-                document.getElementById('pAddress2').value = point.address.line2;
+                document.getElementById('pName1').value = point.name;
+                document.getElementById('pName2').value = point.name+"\n"+point.address.line1+"\n"+point.address.line2;
 
             });
           };
@@ -50,7 +49,7 @@
             //inside callback function , it is the best practice while developing widgets
             JFCustomWidget.subscribe("ready", function(){
 
-                var label = JFCustomWidget.getWidgetSetting('QuestionLabel');
+                var label = JFCustomWidget.getWidgetSetting('QuestionLabe');
                 document.getElementById('labelText').innerHTML = label;
 
                 //subscribe to form submit event
@@ -60,7 +59,7 @@
                         //you should valid attribute to data for JotForm
                         //to be able to use youw widget as required
                         valid: true,
-                        value: document.getElementById('pName').value
+                        value: document.getElementById('pName2').value
                        
                     }
 
@@ -80,7 +79,7 @@
             <h3>Wybrany paczkomat:</h3>
             <div>
                 <span id="labelText"></span>
-                <input class="center type="text" id="pName" readonly>
+                <input class="center type="text" id="pName1" readonly>
             </div><br>
             <div>
                 <input class="center type="text" id="pAddress1" readonly>
