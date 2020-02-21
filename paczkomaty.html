@@ -11,7 +11,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
         <meta http-equiv="x-ua-compatible" content="IE=11"/>
-        <title>21111Paczkomaty 24/7</title>
+        <title>Paczkomaty 24/7</title>
         <script src="https://geowidget.easypack24.net/js/sdk-for-javascript.js"></script>
         <script src="//js.jotform.com/JotFormCustomWidget.min.js"></script>
 
@@ -39,7 +39,7 @@
               console.log(point.address_details.city);
               // var p1 = "point.name"; var p2 = 'point.name'; var p3 = point.name;
               // console.log("Sample log message with parameters: %s, %s, %s", p1, p2, p3);
-                document.getElementById('pName').value = point.name;
+                document.getElementById('pName').value = point;
                 document.getElementById('pAddress1').value = point.address.line1;
                 document.getElementById('pAddress2').value = point.address.line2;
 
@@ -60,7 +60,7 @@
                         //you should valid attribute to data for JotForm
                         //to be able to use youw widget as required
                         valid: true,
-                        value: document.getElementById('pName', 'pName').value
+                        value: document.getElementById('pName').value
                        
                     }
 
