@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html lang="pl" style="height: 100%;">
     <head>
+        <style>.center {
+        text-align: center;
+        border-style: none;
+        background-color: #f7f6f1;
+        font-family: Open Sans, sans-serif;
+        }
+        </style>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
         <meta http-equiv="x-ua-compatible" content="IE=11"/>
         <title>Geowidget v4 - Example - Basic</title>
         <script src="https://geowidget.easypack24.net/js/sdk-for-javascript.js"></script>
         <script src="//js.jotform.com/JotFormCustomWidget.min.js"></script>
-        
+
         <script type="text/javascript">
 
           window.easyPackAsyncInit = function () {
@@ -26,9 +33,15 @@
 
             var map = easyPack.mapWidget('easypack-map', function(point) {
               console.log(point.name);
+              console.log(point.address_details.street);
+              console.log(point.address_details.building_number);
+              console.log(point.address_details.post_code);
+              console.log(point.address_details.city);
               // var p1 = "point.name"; var p2 = 'point.name'; var p3 = point.name;
-              //   console.log("Sample log message with parameters: %s, %s, %s", p1, p2, p3);
-                document.getElementById('userInput').value = point.name;
+              // console.log("Sample log message with parameters: %s, %s, %s", p1, p2, p3);
+                document.getElementById('pName').value = point.name;
+                document.getElementById('pAddress1').value = point.address.line1;
+                document.getElementById('pAddress2').value = point.address.line2;
 
             });
           };
@@ -47,7 +60,10 @@
                         //you should valid attribute to data for JotForm
                         //to be able to use youw widget as required
                         valid: true,
-                        value: document.getElementById('userInput').value
+                        value: document.getElementById('pName').value
+                        value: document.getElementById('point.address.line1').value
+                        value: document.getElementById(point.address.line1).value
+                        value: document.getElementById('pName').value
                     }
 
                     // send value to JotForm
@@ -59,14 +75,19 @@
         <link rel="stylesheet" href="https://geowidget.easypack24.net/css/easypack.css"/>
     </head>
 
-    <body>
+    <body style="background-color: #f7f6f1;">
         <div id="easypack-map"></div>
-        <div id="main">
-            <h3>This is my first widget.</h3>
-            <span id="labelText"></span>
-
-            <input type="text" id="userInput" readonly>
-
+        <div id="main" class="center">
+            <h3>Wybrany paczkomat:</h3>
+            <div>
+                <input class="center type="text" id="pName" readonly>
+            </div><br>
+            <div>
+                <input class="center type="text" id="pAddress1" readonly>
+            </div>
+            <div>
+                <input class="center type="text" id="pAddress2" readonly>
+            </div>
         </div>
     </body>
 </html>
