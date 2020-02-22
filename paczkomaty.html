@@ -11,7 +11,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
         <meta http-equiv="x-ua-compatible" content="IE=11"/>
-        <title> 24/7</title>
+        <title>Paczkomaty 24/7</title>
         <script src="https://geowidget.easypack24.net/js/sdk-for-javascript.js"></script>
         <script src="//js.jotform.com/JotFormCustomWidget.min.js"></script>
 
@@ -50,8 +50,7 @@
             //inside callback function , it is the best practice while developing widgets
             JFCustomWidget.subscribe("ready", function(){
 
-                var label = JFCustomWidget.getWidgetSetting('QuestionLabel');
-                document.getElementById('labelText').innerHTML = label;
+               
 
                 //subscribe to form submit event
                 JFCustomWidget.subscribe("submit", function(){
@@ -79,7 +78,7 @@
         <div id="main" class="center">
             <p style="font-size: 1.3em; font-weight: 600;" class="center">Wybrany paczkomat:</p>
             <div>
-                <span id="labelText"></span>
+                
                 <input style="font-size: 0.95em; font-weight: 600;" class="center type="text" id="pName" readonly>
             </div>
             <div>
