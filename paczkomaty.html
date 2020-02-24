@@ -32,17 +32,14 @@
             });
 
             var map = easyPack.mapWidget('easypack-map', function(point) {
-              console.log(point.name);
-              console.log(point.address_details.street);
-              console.log(point.address_details.building_number);
-              console.log(point.address_details.post_code);
-              console.log(point.address_details.city);
-              // var p1 = "point.name"; var p2 = 'point.name'; var p3 = point.name;
-              // console.log("Sample log message with parameters: %s, %s, %s", p1, p2, p3);
-                document.getElementById('pName').value = point.name;
-                document.getElementById('pAddress1').value = point.address.line1;
-                document.getElementById('pAddress2').value = point.address.line2;
-
+            // console.log(point.name);
+            // console.log(point.address_details.street);
+            // console.log(point.address_details.building_number);
+            // console.log(point.address_details.post_code);
+            // console.log(point.address_details.city);
+            document.getElementById('pName').value = point.name;
+            document.getElementById('pAddress1').value = point.address.line1;
+            document.getElementById('pAddress2').value = point.address.line2;
             });
           };
       
@@ -55,18 +52,15 @@
 
                 //subscribe to form submit event
                 JFCustomWidget.subscribe("submit", function(){
-
                     var msg = {
                         //you should valid attribute to data for JotForm
                         //to be able to use youw widget as required
                         valid: true,
                         value: document.getElementById('pName').value
-                       
                     }
 
                     // send value to JotForm
                     JFCustomWidget.sendSubmit(msg);
-
                 });
             });
         </script>
