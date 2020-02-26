@@ -1,3 +1,5 @@
+<!-- Source: https://github.com/ProtoPCBpl/JotForm/blob/master/paczkomaty.html -->
+
 <!DOCTYPE html>
 <html lang="pl" style="height: 100%;">
     <head>
@@ -40,6 +42,8 @@
             document.getElementById('pName').value = point.name;
             document.getElementById('pAddress1').value = point.address.line1;
             document.getElementById('pAddress2').value = point.address.line2;
+
+            document.getElementById('pFullName').value = point.name+point.address.line1+point.address.line2;
             });
           };
       
@@ -73,7 +77,7 @@
         <div id="main" class="center" style="padding-top: 20px; padding-bottom: 20px">
             <p id="labelText" style="margin: 0px; font-size: 1.3em; font-weight: 600;" class="center"></p>
             <div>
-                <input style="padding-top: 20px; font-size: 0.95em; font-weight: 600;" class="center type="text" id="pName" readonly>
+                <input style="padding-top: 20px; font-size: 0.95em; font-weight: 600;" class="center type="text" id="pFullName" readonly>
             </div>
             <div>
                 <input class="center type="text" id="pAddress1" readonly>
