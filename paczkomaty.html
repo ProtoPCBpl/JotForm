@@ -46,7 +46,7 @@
             document.getElementById('pAddress1').value = point.address.line1;
             document.getElementById('pAddress2').value = point.address.line2;
 
-            document.getElementById('pAddress3').value = point.name+"\n"+point.address.line1+"\n"+point.address_details.post_code+"\n"+point.address_details.city;
+            document.getElementById('pFullAddress').value = point.name+"\n"+point.address.line1+"\n"+point.address_details.post_code+"\n"+point.address_details.city;
 
             // document.getElementById('newString').value = pFullName;
 
@@ -70,7 +70,7 @@
                         //you should valid attribute to data for JotForm
                         //to be able to use youw widget as required
                         valid: true,
-                        value: document.getElementById('pName').value
+                        value: document.getElementById('pFullAddress').value
                     }
 
                     // send value to JotForm
@@ -96,7 +96,7 @@
                 <input class="center" type="text" id="pAddress2" readonly>
             </div>
             <div>
-                <textarea rows="4" type="text" id="pAddress3" readonly></textarea>
+                <textarea rows="4" type="text" id="pFullAddress" readonly></textarea>
             </div>
 
         </div>
