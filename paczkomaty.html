@@ -13,7 +13,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
         <meta http-equiv="x-ua-compatible" content="IE=11"/>
-        <title>Paczkomaty /7</title>
+        <title>Pacty 24/7</title>
         <script src="https://geowidget.easypack24.net/js/sdk-for-javascript.js"></script>
         <script src="//js.jotform.com/JotFormCustomWidget.min.js"></script>
 
@@ -45,6 +45,11 @@
             document.getElementById('pAddress2').value = point.address.line2;
             });
           };
+
+          var str1 = "Hello ";
+var str2 = "world!";
+var str3 = " Have a nice day!";
+var res = str1.concat(str2, str3);
       
             //always subscribe to ready event and implement widget related code
             //inside callback function , it is the best practice while developing widgets
@@ -59,7 +64,7 @@
                         //you should valid attribute to data for JotForm
                         //to be able to use youw widget as required
                         valid: true,
-                        value: document.getElementById('pName'+'pAddress1').value
+                        value: document.getElementById('res').value
                     }
 
                     // send value to JotForm
