@@ -35,21 +35,23 @@
 
             var map = easyPack.mapWidget('easypack-map', function(point) {
 
-            console.log(point);
-            console.log(point.name);
-            console.log(point.address_details.street);
-            console.log(point.address_details.building_number);
-            console.log(point.address_details.post_code);
-            console.log(point.address_details.city);
+             console.log(point);
+            // console.log(point.name);
+            // console.log(point.address_details.street);
+            // console.log(point.address_details.building_number);
+            // console.log(point.address_details.post_code);
+            // console.log(point.address_details.city);
 
             document.getElementById('pName').value = point.name;
             document.getElementById('pAddress1').value = point.address.line1;
             document.getElementById('pAddress2').value = point.address.line2;
 
-            //document.getElementById('newString').value = pFullName;
+            document.getElementById('pAddress3').value = point.name+"\n"+point.address.line1+"\n"+point.address_details.post_code+"\n"+point.address_details.city;
 
-            var pFullName = point.name+"\n"+point.address.line2+"\n"+point.address.line1;
-            console.log(pFullName);
+            // document.getElementById('newString').value = pFullName;
+
+            // var pFullName = point.name+"\n"+point.address.line1+"\n"+point.address_details.post_code+"\n"+point.address_details.city;
+            // console.log(pFullName);
 
             });
           };
@@ -68,7 +70,7 @@
                         //you should valid attribute to data for JotForm
                         //to be able to use youw widget as required
                         valid: true,
-                        value: pFullName
+                        value: document.getElementById('pName').value
                     }
 
                     // send value to JotForm
@@ -85,16 +87,16 @@
         <div id="main" class="center" style="padding-top: 20px; padding-bottom: 20px">
             <p id="labelText" style="margin: 0px; font-size: 1.3em; font-weight: 600;" class="center"></p>
             <div>
-                <input style="padding-top: 20px; font-size: 0.95em; font-weight: 600;" class="center type="text" id="pName" readonly>
+                <input style="padding-top: 20px; font-size: 0.95em; font-weight: 600;" class="center" type="text" id="pName" readonly>
             </div>
             <div>
-                <input class="center type="text" id="pAddress1" readonly>
+                <input class="center" type="text" id="pAddress1" readonly>
             </div>
             <div>
-                <input class="center type="text" id="pAddress2" readonly>
+                <input class="center" type="text" id="pAddress2" readonly>
             </div>
             <div>
-                <input class="center type="text" id="newString" readonly>
+                <textarea rows="4" type="text" id="pAddress3" readonly></textarea>
             </div>
 
         </div>
