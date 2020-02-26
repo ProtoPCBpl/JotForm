@@ -13,7 +13,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
         <meta http-equiv="x-ua-compatible" content="IE=11"/>
-        <title> 24/7</title>
+        <title>Paczkomaty 24/7</title>
         <script src="https://geowidget.easypack24.net/js/sdk-for-javascript.js"></script>
         <script src="//js.jotform.com/JotFormCustomWidget.min.js"></script>
 
@@ -35,7 +35,8 @@
 
             var map = easyPack.mapWidget('easypack-map', function(point) {
 
-             console.log(point);
+            // console.log(point);
+
             // console.log(point.name);
             // console.log(point.address_details.street);
             // console.log(point.address_details.building_number);
@@ -46,12 +47,7 @@
             document.getElementById('pAddress1').value = point.address.line1;
             document.getElementById('pAddress2').value = point.address.line2;
 
-            document.getElementById('pFullAddress').value = point.name+"\n"+point.address.line1+"\n"+point.address_details.post_code+"\n"+point.address_details.city;
-
-            // document.getElementById('newString').value = pFullName;
-
-            // var pFullName = point.name+"\n"+point.address.line1+"\n"+point.address_details.post_code+"\n"+point.address_details.city;
-            // console.log(pFullName);
+            document.getElementById('pFullAddress').value = point.name+"\n"+"\n"+point.address.line1+"\n"+point.address_details.post_code+"\n"+point.address_details.city;
 
             });
           };
@@ -95,8 +91,8 @@
             <div>
                 <input class="center" type="text" id="pAddress2" readonly>
             </div>
-            <div>
-                <textarea rows="4" type="text" id="pFullAddress" readonly></textarea>
+            <div style="display: none;">
+                <textarea type="text" id="pFullAddress" readonly></textarea>
             </div>
 
         </div>
